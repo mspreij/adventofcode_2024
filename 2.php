@@ -20,8 +20,9 @@ foreach ($lines as $line) {
         $match++;
         continue;
     }
-    continue; // comment out for 2b
-    foreach(range($res-1, $res+1) as $i) {
+    // continue; // comment out for 2b
+    // $res is the index of the number that broke a rule, but removing the character before it might also fix the report
+    foreach(range($res-1, $res) as $i) {
         $test = $nums;
         unset($test[$i]);
         $res = is_safe(array_values($test));
@@ -34,6 +35,7 @@ foreach ($lines as $line) {
 
 echo $match;
 
+// this either returns true for valid, or the index of the first number that broke a rule
 function is_safe($nums, $second=0) {
     foreach ($nums as $i => $num) {
         if ($i === 0) {
