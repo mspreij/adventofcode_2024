@@ -41,7 +41,7 @@ foreach($lines as $y => $line) {
 }
 echo "A: $matches\n";
 
-// part B (AKA "oh come the fuck on..")
+// part B (AKA "oh come the **** on..")
 $matches = 0;
 foreach($lines as $y => $line) {
     for($x=0; $x<$len; $x++) {
